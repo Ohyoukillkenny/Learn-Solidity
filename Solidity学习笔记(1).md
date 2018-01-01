@@ -1,4 +1,4 @@
-### Solidity学习笔记(1) — Ballot###
+### Solidity学习笔记(1) — Ballot
 
 **作者**：孔令坤，**个人主页**：https://ohyoukillkenny.github.io/
 
@@ -12,7 +12,7 @@ Solidity配置与运行案例：https://karl.tech/learning-solidity-part-2-votin
 
 另外附上官方的学习代码链接：https://solidity.readthedocs.io/en/latest/solidity-by-example.html#voting
 
-#### 1.逻辑简介####
+#### 1.逻辑简介
 
 如下图所示，整个投票过程中有三个角色，其中ChairMan负责组织投票，而Voters进行投票，Proposals是本次投票中的候选人。其中，Chairman组织投票的方式为指定全部的候选人名单，并逐一赋予候选人们投票的权力。
 
@@ -24,7 +24,7 @@ Solidity配置与运行案例：https://karl.tech/learning-solidity-part-2-votin
 
 ![Voters](http://www.z4a.net/images/2018/01/01/ballot-voter.png)
 
-#### 2.代码摘要####
+#### 2.代码摘要
 
 **指定候选者名单**：chairperson的初始化和指定候选者的名单是在初始化整个合同的过程中同时进行的，这确保了合同的发起人`msg.sender`就是本次投票的组织者，chairman。代码如下：
 
@@ -140,7 +140,7 @@ function winnerName() public view
 }
 ```
 
-#### 对官方代码的优化：####
+#### 对官方代码的优化
 
 官方的代码中存有两个值得改进的地方，第一在于并没有设置整个投票过程中的时长，讲道理一个规范的投票需要投票发起人指定一个投票的进行时长，超过这个时间后，就无法进行继续投票。第二在于代码没有考虑平票的情况。基于这两个问题，我对官方的代码进行了简单的优化，优化的结果放在下面的链接中，另外之后我的一些笔记会陆续放到下面的链接中：
 
